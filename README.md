@@ -2,11 +2,6 @@ ShadowSaaS Radar
 
 Explainable Shadow AI Detection | Identity Security | IAM Behavioral Analytics
 
-""Python" (https://img.shields.io/badge/Python-3.x-blue.svg)" (https://www.python.org/)
-"Cybersecurity" (https://img.shields.io/badge/Domain-Cybersecurity-red.svg)
-"IAM" (https://img.shields.io/badge/Focus-IAM%20%7C%20SSO%20%7C%20UEBA-purple.svg)
-"Research" (https://img.shields.io/badge/Project-Independent%20Security%20Research-success.svg)
-
 ---
 
 Executive Summary

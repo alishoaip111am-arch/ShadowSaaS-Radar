@@ -1,101 +1,225 @@
 ShadowSaaS Radar
 
-Explainable Shadow AI Detection and IAM Behavioral Analysis from Authentication Logs
+Explainable Shadow AI Detection | Identity Security | IAM Behavioral Analytics
 
-ShadowSaaS Radar is an independent Python security research prototype designed to identify potential access to known generative AI applications through identity and authentication logs.
-
-The system maps authentication events against an application catalog, analyzes user access patterns, and generates explainable risk scores with supporting evidence.
-
-It also includes an experimental IAM behavioral analysis pipeline evaluated using a real, publicly available anonymized IAM dataset.
-
-Important: Authentication events alone do not prove actual application usage, file uploads, data transfers, or data leakage.
-
-«Independent educational and research project. Not affiliated with, sponsored by, or endorsed by HENNGE.»
+""Python" (https://img.shields.io/badge/Python-3.x-blue.svg)" (https://www.python.org/)
+"Cybersecurity" (https://img.shields.io/badge/Domain-Cybersecurity-red.svg)
+"IAM" (https://img.shields.io/badge/Focus-IAM%20%7C%20SSO%20%7C%20UEBA-purple.svg)
+"Research" (https://img.shields.io/badge/Project-Independent%20Security%20Research-success.svg)
 
 ---
 
-Key Features
+Executive Summary
 
-- HENNGE Access Control CSV integration.
+What happens when employees access AI applications that remain invisible to an organization's security monitoring systems?
+
+The rapid adoption of generative AI is creating a new identity security challenge: organizations need better visibility into which AI services are being accessed through corporate identities, particularly when application usage falls outside established security governance.
+
+ShadowSaaS Radar is an independent Python-based cybersecurity research prototype designed to investigate this challenge through identity and authentication telemetry.
+
+The system transforms raw authentication events into structured security intelligence by combining:
+
+- Application catalog matching for known generative AI services.
+- Authentication event ingestion and normalization.
+- Behavioral analysis of user access patterns.
+- Explainable risk scoring and severity classification.
+- Evidence-based security reporting.
+- Experimental IAM behavioral analytics using real anonymized identity telemetry.
+
+Rather than treating every authentication event as a security incident, the system analyzes activity patterns and provides contextual evidence to support security investigation and risk prioritization.
+
+The project emphasizes explainability, reproducibility, modular engineering, and responsible interpretation of security data.
+
+The Security Problem
+
+The widespread adoption of generative AI introduces significant identity visibility and data-governance challenges.
+
+Organizations may encounter situations where:
+
+- Employees access AI services without formal organizational approval.
+- Security teams have incomplete visibility into AI application access.
+- Corporate identities are used to authenticate against services outside approved application inventories.
+- Repeated authentication patterns are difficult to investigate manually.
+- Identity logs contain useful security signals but provide limited visibility into activity occurring inside applications.
+
+Traditional authentication monitoring can identify access events, but extracting meaningful behavioral intelligence requires structured application identification, event correlation, and contextual risk analysis.
+
+ShadowSaaS Radar investigates how existing identity telemetry can be transformed into explainable indicators of potential Shadow AI access.
+
+Results at a Glance
+
+The project has been evaluated through two distinct experimental tracks: a synthetic Shadow AI benchmark and a real anonymized IAM behavioral analysis dataset.
+
+Metric| Result
+Real anonymized IAM events processed| 2,184,272
+IAM users analyzed| 8,890
+Target behavioral events examined| 18,542
+Behavioral alerts generated| 48
+HIGH severity alerts| 8
+MEDIUM severity alerts| 40
+Synthetic expected AI usage pairs (self-labeled)| 90
+Synthetic detected pairs| 90
+Synthetic benchmark precision| 100%
+Synthetic benchmark recall| 100%
+Synthetic benchmark F1-score| 100%
+
+«Research integrity: The 100% precision, recall, and F1-score results apply exclusively to predefined synthetic scenarios. The expected labels were defined by the project author using the same pattern definitions as the detector, so the result shows consistency with the benchmark, not real-world accuracy. These results do not establish real-world Shadow AI detection accuracy. The real IAM dataset evaluates a separate behavioral analysis pipeline and does not identify specific AI application usage.»
+
+Core Capabilities
+
+1. Shadow AI Detection
+
+The detection pipeline identifies potential access to known generative AI applications through authentication telemetry.
+
+Capabilities include:
+
+- Matching authentication targets against a structured application catalog.
+- Identifying known generative AI application names, domains, and configured SSO service names.
+- Detecting one-off, repeated, and habitual authentication patterns.
+- Analyzing successful authentication frequency across active days.
+- Generating explainable risk scores with supporting evidence.
+- Distinguishing application identification from assumptions about actual application usage.
+
+2. Identity & Authentication Log Engineering
+
+The ingestion architecture supports multiple authentication data sources through a common event representation.
+
+Capabilities include:
+
 - Generic authentication CSV ingestion.
-- Application catalog covering known generative AI services.
-- Explainable Shadow AI risk scoring.
-- Detection of one-off, repeated, and habitual authentication patterns.
-- Experimental IAM behavioral analysis.
-- Synthetic HENNGE-style log generation.
-- Evaluation using a real anonymized IAM dataset.
-- Reproducible tests and performance experiments.
+- HENNGE Access Control CSV adapter.
+- Normalization into a shared event model.
+- Authentication outcome validation.
+- Preservation of additional source metadata.
+- Handling of source-specific fields and optional values.
+- Separation of successful authentication events from failed sign-ins.
 
-Quick Start
+3. IAM Behavioral Analytics
 
-git clone https://github.com/alishoaip111am-arch/ShadowSaaS-Radar.git
+A separate experimental pipeline analyzes real anonymized IAM telemetry to identify identity-related behavioral patterns.
 
-cd ShadowSaaS-Radar
+Capabilities include:
 
-python -m pip install -r requirements.txt
+- Processing large-scale IAM event datasets.
+- Filtering relevant behavioral events.
+- Analyzing failed-password threshold events.
+- Identifying repeated behavioral activity within a 15-minute window.
+- Generating severity-based security alerts.
+- Optimized CSV processing for large datasets.
+- Comparing optimized processing results against the original implementation.
 
-python main.py data/hennge_sample.csv --source hennge
+4. Explainable Security Reporting
 
-python main.py data/sample_logs.csv --source generic
+The reporting layer converts detection results into structured findings designed for investigation.
 
-python -m pytest -q
+Each finding can include:
 
-The application has no external runtime dependencies. Development dependencies, including pytest, are used for testing.
+- User and application identification.
+- Risk score and severity classification.
+- Authentication event counts.
+- Number of active days.
+- Supporting behavioral evidence.
+- Explicit assumptions and limitations.
 
-Example Output
+The system is designed to make detection decisions understandable rather than presenting unexplained risk scores.
 
-Example from the synthetic HENNGE sample:
+Technical Architecture
 
-Loaded 7 events, found 1 AI usage record(s)
+The project follows a modular architecture that separates data ingestion, application identification, behavioral detection, risk analysis, and reporting.
 
-[MEDIUM] user_01 -> ChatGPT (score 48/100)
+Component| Responsibility
+Ingestion Layer| Parses, validates, and normalizes authentication events
+Event Model| Provides a common representation for different log sources
+Application Catalog| Matches known applications, domains, and configured SSO service names
+Detection Engine| Identifies authentication behavior patterns
+Risk Engine| Calculates explainable risk scores and severity levels
+Reporting Layer| Produces structured findings with supporting evidence
+IAM Behavioral Engine| Analyzes identity-related behavioral events
+Data Processing Pipeline| Processes large IAM CSV datasets efficiently
 
-Evidence:
-- 4 authentication event(s) across 4 active day(s)
+Engineering Approach
 
-Based on authentication events only;
-does not confirm file uploads or data transfers.
+The implementation emphasizes:
 
-The example uses synthetic data and does not represent a real organization.
+- Separation of responsibilities across modules.
+- Reusable event normalization.
+- Explicit input validation.
+- Explainable detection decisions.
+- Reproducible experimental datasets.
+- Automated regression testing.
+- Separation of synthetic evaluation from real-data analysis.
 
----
+Technology & Skills Demonstrated
 
-Data Sources and Evidence
+Programming & Software Engineering
 
-ShadowSaaS Radar has been developed and evaluated using two distinct data sources.
+- Python development.
+- Modular software architecture.
+- Object-oriented data modeling.
+- CSV ingestion and processing.
+- Input validation and error handling.
+- Automated testing with pytest.
+- Reproducible experiment design.
+- Performance-oriented data processing.
 
-1. HENNGE Access Control Integration
+Cybersecurity & Identity Engineering
 
-The HENNGE adapter follows the publicly documented HENNGE Access Control access-log format.
+- Identity and Access Management (IAM).
+- Single Sign-On (SSO).
+- User and Entity Behavior Analytics (UEBA).
+- Shadow AI risk monitoring.
+- Authentication security.
+- Identity event analysis.
+- Behavioral anomaly detection.
+- Application access visibility.
 
-Documentation:
+Security Analytics & Research
 
-"HENNGE Access Control – Access Logs" (https://support.hdeone.com/hc/en-us/articles/11374378879641)
+- Application catalog matching.
+- Behavioral pattern classification.
+- Explainable risk scoring.
+- Severity-based alert generation.
+- Large-scale anonymized dataset analysis.
+- Synthetic benchmark evaluation.
+- Evidence-based security reporting.
+- Research methodology and validation discipline.
 
-The integration supports:
+Data Sources & Experimental Methodology
 
-- Timestamp
-- Username
-- Login successful
-- SSO Target
-- Additional documented fields preserved as event metadata
+ShadowSaaS Radar uses two distinct data sources for different evaluation purposes. Their results are intentionally reported separately to avoid confusing synthetic detection performance with real-world behavioral analysis.
 
-The adapter accepts TRUE and FALSE values case-insensitively, rejects invalid login-success values, and excludes failed sign-ins from successful application access detection.
+1. HENNGE Access Control Adapter
 
-Empty SSO Target values are accepted where a login type does not identify a connected service.
+The HENNGE adapter follows publicly available HENNGE Access Control access-log documentation:
 
-Validation status:
+https://support.hdeone.com/hc/en-us/articles/11374378879641
 
-The HENNGE integration was tested using reproducible synthetic HENNGE-style authentication records.
+The adapter supports documented authentication fields, including:
+
+- "Timestamp"
+- "Username"
+- "Login successful"
+- "SSO Target"
+
+Additional documented fields are preserved as event metadata.
+
+Data validation. The adapter:
+
+- Accepts TRUE and FALSE login-success values case-insensitively.
+- Rejects invalid authentication outcome values.
+- Preserves optional documented metadata.
+- Accepts empty "SSO Target" values where a login type does not identify a connected service.
+- Rejects missing usernames.
+- Distinguishes authentication outcomes (success or failure) from application usage, which the logs do not show.
+
+Validation status. The HENNGE adapter was evaluated using reproducible synthetic HENNGE-style authentication records.
 
 No real HENNGE customer access logs were available for this research. Compatibility with actual customer exports has therefore not yet been independently validated.
 
-HENNGE Synthetic Evaluation
-
-A reproducible dataset was generated to evaluate application matching and behavioral classification.
+HENNGE synthetic evaluation. A reproducible dataset was generated to evaluate application matching and behavioral classification.
 
 Metric| Result
-Employees| 200
+Simulated employees| 200
 Authentication events| 1,688
 Expected AI usage pairs| 90
 Detected pairs| 90
@@ -106,44 +230,37 @@ Precision| 100%
 Recall| 100%
 F1-score| 100%
 
-These results apply only to the generated dataset and its predefined scenarios. They do not establish real-world detection accuracy.
-
----
+These results apply only to the generated dataset and its predefined scenarios. They demonstrate consistency against the synthetic benchmark, not independently established real-world detection accuracy.
 
 2. Real Anonymized IAM-UEBA Dataset
 
-The project was also evaluated using a real anonymized IAM dataset published on Zenodo.
+The project also includes an experimental IAM behavioral analysis pipeline evaluated using a real anonymized IAM dataset published on Zenodo.
 
-Dataset: IAM-UEBA Dataset
+- Dataset: IAM-UEBA Dataset
+- Authors: Mayor Gallego, Vicente Jesús; Estepa Alonso, Rafael María; Estepa Alonso, Antonio José; Diaz-Verdejo, Jesús E.
+- Source: Zenodo
+- DOI: "10.5281/zenodo.22871318"
+- License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+- Link: "Access the original dataset on Zenodo" (https://zenodo.org/records/22871318)
 
-Source: Zenodo
+The dataset contains 2,184,272 real anonymized IAM events collected from a cloud identity and access management environment. It includes authentication, provisioning, administrative, service, and system events. It is not redistributed with this repository.
 
-DOI: "10.5281/zenodo.22871318"
-
-License: Creative Commons Attribution 4.0 International (CC BY 4.0).
-
-"Access the original dataset on Zenodo" (https://zenodo.org/records/22871318)
-
-The dataset contains 2,184,272 real anonymized IAM events collected from a cloud identity and access management environment.
-
-It includes authentication, provisioning, administrative, service, and system events.
-
-Experimental Results
+Experimental results
 
 Metric| Result
 Total dataset events| 2,184,272
 Target behavioral events| 18,542
 Users analyzed| 8,890
 Total alerts| 48
-HIGH alerts| 8
-MEDIUM alerts| 40
-Processing time| 5.85 seconds
+HIGH severity alerts| 8
+MEDIUM severity alerts| 40
+Reported processing time| 5.85 seconds (varies by environment)
 
 The experiment analyzes "exceed_failed_password_limit" events using a 15-minute behavioral window.
 
 The optimized CSV processing pipeline produced the same 48 alerts as the original implementation.
 
-Interpretation and Limitations
+Interpretation and limitations
 
 - The dataset contains real anonymized IAM telemetry.
 - The dataset is not an AI application usage dataset.
@@ -154,37 +271,22 @@ Interpretation and Limitations
 
 This experiment demonstrates ingestion, IAM behavioral analysis, and processing performance on real public telemetry. It does not validate Shadow AI detection accuracy.
 
----
-
-Design Principles
-
-1. Approved does not mean safe. Approved applications can still exhibit activity worth reviewing.
-2. Enterprise does not mean approved. An enterprise account is not automatically authorized.
-3. Free does not mean compromised. A free account alone is not evidence of data leakage.
-4. Authentication does not prove usage. Sign-in events do not reveal what happened inside an application.
-5. Every score needs an explanation. Findings include evidence and assumptions separately.
-
-Architecture
-
-1. Ingestion: Converts source logs into a common "Event" model.
-2. Application Catalog: Matches event targets against application names, domains, and optional SSO service names.
-3. Detection: Analyzes successful authentication frequency and user activity patterns.
-4. Risk Engine: Calculates a risk score and severity level.
-5. Reporting: Produces findings with supporting evidence and assumptions.
-6. IAM Behavioral Analysis: Provides a separate experimental pipeline for analyzing IAM events.
-
 Authentication Patterns
 
-Pattern| Definition
-one_off| One authentication event
-repeated| Multiple events on fewer than 3 distinct days
-habitual| Events across 3 or more distinct days
+The Shadow AI detection engine classifies authentication behavior into three patterns:
 
-The detection engine analyzes a limited number of recent successful authentication events per user and application.
+Pattern| Definition
+"one_off"| One authentication event
+"repeated"| Multiple events on fewer than 3 distinct days
+"habitual"| Events across 3 or more distinct days
+
+The detection engine analyzes successful authentication events per user and application according to its implemented event-selection logic.
+
+These patterns represent authentication behavior, not confirmed application usage.
 
 Risk Model
 
-The current risk model uses initial engineering weights. These are not a validated security standard.
+The current risk model uses initial engineering weights. These are configurable design assumptions, not a validated security standard.
 
 Factor| Rule
 Active days| +10 per day, up to 5 days
@@ -194,13 +296,21 @@ Approved application, account not marked free| Score capped at 25
 Single authentication event| Score capped at 15
 Maximum score| 100
 
-Severity levels:
+Severity classification
 
 - LOW: 0–29
 - MEDIUM: 30–59
 - HIGH: 60–100
 
-The score is a prioritization aid, not a probability of compromise or proof of a policy violation.
+Risk interpretation. The score is a prioritization aid, not a probability of compromise or proof of a policy violation.
+
+The model follows several important principles:
+
+1. Approved applications are not automatically risk-free.
+2. Enterprise accounts are not automatically approved.
+3. Free accounts are not evidence of compromise.
+4. Unknown account types are not automatically classified as free.
+5. A single authentication event should not be interpreted as confirmed misuse.
 
 Risk weights and thresholds require further calibration using independently labeled data.
 
@@ -219,7 +329,7 @@ Additional documented fields are preserved as metadata.
 
 The HENNGE format does not provide account-type information. Free-account status cannot be inferred from these logs.
 
-Generic CSV
+Generic Authentication CSV
 
 Required columns:
 
@@ -229,9 +339,20 @@ Expected timestamp format:
 
 %Y-%m-%d %H:%M:%S
 
+The generic ingestion pipeline converts supported CSV records into the common event model.
+
 Reproducibility
 
-Generate Synthetic HENNGE-Style Logs
+Clone the repository
+
+git clone https://github.com/alishoaip111am-arch/ShadowSaaS-Radar.git
+cd ShadowSaaS-Radar
+
+Install dependencies
+
+python -m pip install -r requirements.txt
+
+Generate synthetic HENNGE-style logs
 
 python scripts/generate_hennge_logs.py \
   --employees 200 \
@@ -239,66 +360,88 @@ python scripts/generate_hennge_logs.py \
   --failure-rate 0.05 \
   --seed 42
 
-Run HENNGE Analysis
+Run HENNGE analysis
 
 python main.py data/hennge_synthetic.csv --source hennge
 
-Run IAM Behavioral Analysis
+Run automated tests
 
-The IAM-UEBA dataset is not included in this repository. Download the dataset from Zenodo and place the extracted "events.csv" file at:
+python -m pytest -q
+
+Run IAM behavioral analysis
+
+The IAM-UEBA dataset is not included in this repository. Download it from Zenodo and place the extracted "events.csv" file at:
 
 data/real/events.csv
 
-Then run:
+This path is excluded from version control through ".gitignore". Then run:
 
 python iam_main.py data/real/events.csv
 
+Engineering Principles
+
+1. Explainability: Every finding should have an understandable reason.
+2. Evidence over assumptions: Authentication evidence must not be confused with application activity.
+3. Responsible risk scoring: A risk score is a prioritization aid, not proof of compromise.
+4. Data integrity: Synthetic and real datasets must remain clearly distinguished.
+5. Reproducibility: Experiments and tests should be repeatable.
+6. Privacy awareness: Anonymized identity data must not be re-identified.
+7. Modularity: Ingestion, detection, analysis, and reporting should remain independently maintainable.
+
 Limitations
 
-- Authentication logs do not establish actual application usage.
-- They do not confirm uploads, sharing, or data transfers.
-- Services accessed outside the organization's SSO may not appear.
-- HENNGE SSO Target values are organization-configured service names, not necessarily application domains.
+- Authentication logs do not prove actual application usage.
+- They cannot confirm file uploads, sharing, or data transfers.
+- Services accessed outside organizational SSO may not appear.
+- HENNGE "SSO Target" values are organization-configured service names, not necessarily application domains.
 - Generic service names must not be automatically mapped to AI applications.
-- HENNGE access logs do not provide account-type information.
+- HENNGE logs do not provide free-versus-enterprise account information.
 - Unknown account type is not treated as free.
 - The application catalog covers a limited set of services.
 - Risk weights and thresholds require independent validation.
 - The HENNGE adapter has not been validated against real customer exports.
-- The IAM-UEBA dataset does not identify specific generative AI application usage.
+- The IAM-UEBA dataset does not identify specific generative AI applications.
+- Real-world Shadow AI detection accuracy has not yet been established.
 
-Roadmap
+Future Research
 
-- Evaluation using independently labeled datasets.
-- Improved application catalog and SSO service mapping.
+- Evaluation using independently labeled enterprise authentication datasets.
+- Broader application catalog coverage.
+- Improved application and SSO service mapping.
 - Configurable account-type information.
-- Privacy-preserving user identifiers in reports.
-- Additional identity, proxy, DNS, OAuth, and DLP adapters.
-- Further optimization for large-scale log processing.
-- Independent validation of risk scores and detection thresholds.
+- Additional identity, proxy, DNS, OAuth, and DLP integrations.
+- Privacy-preserving identity analysis.
+- Further large-scale processing optimization.
+- Independent validation of risk weights and detection thresholds.
 
 Contributing
 
-Contributions are welcome.
-
-To add an application:
-
-1. Update "shadowsaas/catalog/app_catalog.json".
-2. Add its name, domains, category, and optional SSO service names.
-3. Add or update relevant tests.
-4. Run:
+To add an application, edit "shadowsaas/catalog/app_catalog.json" (name, domains, category, and optional "sso_names"), add or update a test, and run:
 
 python -m pytest -q
 
 For larger changes, open an issue first.
 
+Project Independence
+
+ShadowSaaS Radar is an independent educational and cybersecurity research project.
+
+The HENNGE adapter is based on publicly available documentation. This project is not affiliated with, sponsored by, or endorsed by HENNGE.
+
 License
 
-See the "LICENSE" file in the repository for licensing terms.
+This project is distributed under the MIT License, provided that the repository's "LICENSE" file contains the corresponding MIT license text.
+
+The IAM-UEBA dataset is separately distributed under CC BY 4.0. Refer to the original Zenodo record for its attribution and licensing terms.
 
 Disclaimer
 
-ShadowSaaS Radar is an educational and research prototype. Its findings are intended to support security review and must not be treated as proof of malicious activity, data leakage, account compromise, or policy violations.
+ShadowSaaS Radar is a research prototype intended to support security analysis and investigation.
 
-This project is independent and is not affiliated with, sponsored by, or endorsed by HENNGE.
-EOF
+Its findings must not be treated as proof of malicious activity, data leakage, account compromise, or policy violations.
+
+The system identifies potential authentication patterns and behavioral indicators that may warrant further investigation. Final security decisions require additional evidence and human review.
+
+---
+
+ShadowSaaS Radar: Turning Identity Telemetry into Explainable Security Intelligence.

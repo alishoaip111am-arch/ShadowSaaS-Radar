@@ -1,0 +1,8 @@
+Timestamp,Username,Login successful,IP address,Device Type,Detail,Reason,Entrance Pass ID,Certificate ID,Login Type,SSO Target
+2026-11-01 09:12:00,user_01,TRUE,10.0.0.1,PC browser,,,,,saml,ChatGPT
+2026-11-02 10:15:00,user_01,TRUE,10.0.0.1,PC browser,,,,,saml,ChatGPT
+2026-11-03 11:20:00,user_01,TRUE,10.0.0.1,PC browser,,,,,saml,ChatGPT
+2026-11-04 12:30:00,user_01,TRUE,10.0.0.1,PC browser,,,,,saml,ChatGPT
+2026-11-04 13:00:00,user_02,FALSE,10.0.0.2,mobile browser,,invalid-password,,,saml,ChatGPT
+2026-11-04 14:00:00,user_03,TRUE,10.0.0.3,PC browser,,,,,web,
+2026-11-04 15:00:00,user_04,TRUE,10.0.0.4,PC browser,,,,,saml,Office 365

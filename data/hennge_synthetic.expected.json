@@ -1,0 +1,722 @@
+[
+  {
+    "user": "employee_0001",
+    "app": "Gemini",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0006",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0007",
+    "app": "Microsoft Copilot",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0008",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0018",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0020",
+    "app": "DeepSeek",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0022",
+    "app": "Claude",
+    "events": 4,
+    "days_active": 4,
+    "pattern": "habitual",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0027",
+    "app": "Gemini",
+    "events": 3,
+    "days_active": 3,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0029",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0031",
+    "app": "Claude",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0032",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0033",
+    "app": "Perplexity",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0037",
+    "app": "DeepSeek",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0038",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0042",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0046",
+    "app": "DeepSeek",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0047",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 3,
+    "pattern": "habitual",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0049",
+    "app": "Perplexity",
+    "events": 4,
+    "days_active": 4,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0050",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0053",
+    "app": "Gemini",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0054",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0057",
+    "app": "DeepSeek",
+    "events": 7,
+    "days_active": 7,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0058",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0059",
+    "app": "Microsoft Copilot",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0063",
+    "app": "Gemini",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0064",
+    "app": "ChatGPT",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0065",
+    "app": "Microsoft Copilot",
+    "events": 7,
+    "days_active": 7,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0074",
+    "app": "Claude",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0075",
+    "app": "Claude",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0079",
+    "app": "ChatGPT",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0084",
+    "app": "Perplexity",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0085",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0086",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0090",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0092",
+    "app": "Claude",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0095",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0097",
+    "app": "DeepSeek",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0098",
+    "app": "Perplexity",
+    "events": 5,
+    "days_active": 5,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0099",
+    "app": "ChatGPT",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0100",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0102",
+    "app": "ChatGPT",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0103",
+    "app": "Gemini",
+    "events": 7,
+    "days_active": 7,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0107",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0112",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0114",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0115",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0116",
+    "app": "Gemini",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0117",
+    "app": "Perplexity",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0118",
+    "app": "Claude",
+    "events": 6,
+    "days_active": 6,
+    "pattern": "habitual",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0119",
+    "app": "DeepSeek",
+    "events": 5,
+    "days_active": 5,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0121",
+    "app": "DeepSeek",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0123",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0126",
+    "app": "Perplexity",
+    "events": 4,
+    "days_active": 4,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0127",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0130",
+    "app": "ChatGPT",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0133",
+    "app": "Gemini",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0134",
+    "app": "Microsoft Copilot",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0135",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0137",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0139",
+    "app": "ChatGPT",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0140",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0142",
+    "app": "Microsoft Copilot",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0143",
+    "app": "ChatGPT",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0144",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0149",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0152",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0154",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0159",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0160",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0161",
+    "app": "DeepSeek",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0168",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0171",
+    "app": "Microsoft Copilot",
+    "events": 3,
+    "days_active": 3,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0172",
+    "app": "ChatGPT",
+    "events": 3,
+    "days_active": 3,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0173",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0174",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0175",
+    "app": "ChatGPT",
+    "events": 7,
+    "days_active": 7,
+    "pattern": "habitual",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0176",
+    "app": "Claude",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0177",
+    "app": "Claude",
+    "events": 3,
+    "days_active": 2,
+    "pattern": "repeated",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0178",
+    "app": "Claude",
+    "events": 6,
+    "days_active": 6,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0180",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0186",
+    "app": "Microsoft Copilot",
+    "events": 8,
+    "days_active": 8,
+    "pattern": "habitual",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0187",
+    "app": "Microsoft Copilot",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0188",
+    "app": "ChatGPT",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0189",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0193",
+    "app": "Claude",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "unknown"
+  },
+  {
+    "user": "employee_0195",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "enterprise"
+  },
+  {
+    "user": "employee_0196",
+    "app": "ChatGPT",
+    "events": 2,
+    "days_active": 1,
+    "pattern": "repeated",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0197",
+    "app": "Claude",
+    "events": 3,
+    "days_active": 3,
+    "pattern": "habitual",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0199",
+    "app": "DeepSeek",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  },
+  {
+    "user": "employee_0200",
+    "app": "Perplexity",
+    "events": 1,
+    "days_active": 1,
+    "pattern": "one_off",
+    "account_type": "free"
+  }
+]

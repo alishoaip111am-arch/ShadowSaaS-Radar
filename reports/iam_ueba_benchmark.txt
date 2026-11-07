@@ -1,0 +1,222 @@
+Scanning IAM-UEBA CSV...
+
+IAM BEHAVIORAL REPORT
+=============================================
+Relevant events scanned: 18542
+Users analyzed: 8890
+Total alerts: 48
+HIGH: 8
+MEDIUM: 40
+Processing time: 5.85 seconds
+
+User: <user:99662>
+Severity: HIGH
+Events: 9
+Duration: 4.9 minutes
+Unique IPs: 2
+Reason: 9 password-limit-exceeded events within 15 minutes
+
+User: <user:102976>
+Severity: HIGH
+Events: 9
+Duration: 8.3 minutes
+Unique IPs: 2
+Reason: 9 password-limit-exceeded events within 15 minutes
+
+User: <user:97159>
+Severity: HIGH
+Events: 8
+Duration: 0.68 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:97616>
+Severity: HIGH
+Events: 8
+Duration: 6.97 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:103060>
+Severity: HIGH
+Events: 8
+Duration: 5.22 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:105359>
+Severity: HIGH
+Events: 8
+Duration: 8.68 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:109395>
+Severity: HIGH
+Events: 8
+Duration: 3.52 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:110437>
+Severity: HIGH
+Events: 8
+Duration: 3.98 minutes
+Unique IPs: 1
+Reason: 8 password-limit-exceeded events within 15 minutes
+
+User: <user:98389>
+Severity: MEDIUM
+Events: 7
+Duration: 2.93 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:16713>
+Severity: MEDIUM
+Events: 7
+Duration: 13.75 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:103723>
+Severity: MEDIUM
+Events: 7
+Duration: 2.33 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:48962>
+Severity: MEDIUM
+Events: 7
+Duration: 8.05 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:105148>
+Severity: MEDIUM
+Events: 7
+Duration: 3.07 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:106108>
+Severity: MEDIUM
+Events: 7
+Duration: 7.52 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:106528>
+Severity: MEDIUM
+Events: 7
+Duration: 6.23 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:107055>
+Severity: MEDIUM
+Events: 7
+Duration: 14.1 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:109070>
+Severity: MEDIUM
+Events: 7
+Duration: 12.23 minutes
+Unique IPs: 1
+Reason: 7 password-limit-exceeded events within 15 minutes
+
+User: <user:98744>
+Severity: MEDIUM
+Events: 6
+Duration: 1.98 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:99321>
+Severity: MEDIUM
+Events: 6
+Duration: 3.72 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:103126>
+Severity: MEDIUM
+Events: 6
+Duration: 7.65 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:105891>
+Severity: MEDIUM
+Events: 6
+Duration: 12.58 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:106523>
+Severity: MEDIUM
+Events: 6
+Duration: 6.37 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:108038>
+Severity: MEDIUM
+Events: 6
+Duration: 7.67 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:110182>
+Severity: MEDIUM
+Events: 6
+Duration: 7.53 minutes
+Unique IPs: 1
+Reason: 6 password-limit-exceeded events within 15 minutes
+
+User: <user:97446>
+Severity: MEDIUM
+Events: 5
+Duration: 3.97 minutes
+Unique IPs: 1
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+User: <user:99718>
+Severity: MEDIUM
+Events: 5
+Duration: 8.18 minutes
+Unique IPs: 1
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+User: <user:100873>
+Severity: MEDIUM
+Events: 5
+Duration: 4.4 minutes
+Unique IPs: 1
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+User: <user:102532>
+Severity: MEDIUM
+Events: 5
+Duration: 3.53 minutes
+Unique IPs: 1
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+User: <user:31544>
+Severity: MEDIUM
+Events: 5
+Duration: 13.95 minutes
+Unique IPs: 2
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+User: <user:43400>
+Severity: MEDIUM
+Events: 5
+Duration: 3.13 minutes
+Unique IPs: 2
+Reason: 5 password-limit-exceeded events within 15 minutes
+
+Analysis completed.

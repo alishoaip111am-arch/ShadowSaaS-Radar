@@ -1,0 +1,62 @@
+
+{
+  "apps": [
+    {
+      "name": "ChatGPT",
+      "domains": [
+        "chatgpt.com",
+        "openai.com"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "Claude",
+      "domains": [
+        "claude.ai"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "Gemini",
+      "domains": [
+        "gemini.google.com"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "Microsoft Copilot",
+      "domains": [
+        "copilot.microsoft.com"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "Perplexity",
+      "domains": [
+        "perplexity.ai"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "DeepSeek",
+      "domains": [
+        "deepseek.com"
+      ],
+      "sso_names": [],
+      "category": "generative_ai"
+    },
+    {
+      "name": "Dropbox",
+      "domains": [
+        "dropbox.com"
+      ],
+      "sso_names": [],
+      "category": "file_sharing"
+    }
+  ]
+}

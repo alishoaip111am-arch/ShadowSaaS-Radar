@@ -17,5 +17,5 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "autoscale"
-build = ["sh", "-c", "python -m venv .venv && .venv/bin/python -m pip install -r requirements.txt && cd frontend && npm ci && npm run build"]
+build = ["sh", "-c", "python -m venv .venv && PIP_CONFIG_FILE=/dev/null .venv/bin/python -m pip install -r requirements.txt && cd frontend && npm ci && npm run build"]
 run = ["sh", "-c", ".venv/bin/python -m uvicorn api:app --host 0.0.0.0 --port 8000"]

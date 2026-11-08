@@ -23,3 +23,13 @@ body {
 button, input, select {
   font: inherit;
 }
+
+
+/* Hide Replit branding badge */
+#replit-badge,
+replit-badge,
+.replit-badge,
+[data-replit-badge] {
+  display: none !important;
+  visibility: hidden !important;
+}

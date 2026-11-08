@@ -1,24 +1,21 @@
-modules = ["python-3.11", "python-base-3.13"]
+modules = ["nodejs-20", "python-3.11"]
 
 [workflows]
 runButton = "Project"
 
 [[workflows.workflow]]
 name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Run main.py"
-
-[[workflows.workflow]]
-name = "Run main.py"
-author = "agent"
+mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 main.py"
+args = ".venv/bin/python -m uvicorn api:app --host 0.0.0.0 --port 8000"
 
-[workflows.workflow.metadata]
-outputType = "console"
+[[ports]]
+localPort = 8000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["sh", "-c", "python -m venv .venv && .venv/bin/python -m pip install -r requirements.txt && cd frontend && npm ci && npm run build"]
+run = ["sh", "-c", ".venv/bin/python -m uvicorn api:app --host 0.0.0.0 --port 8000"]

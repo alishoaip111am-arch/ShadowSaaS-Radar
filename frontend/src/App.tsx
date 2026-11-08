@@ -13,7 +13,7 @@ type Result = {
 
 export default function App() {
   const [mode, setMode] = useState('shadow')
-  const [source, setSource] = useState('hennge')
+  const [source, setSource] = useState('generic')
   const [file, setFile] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -140,8 +140,8 @@ export default function App() {
               <>
                 <div className="metrics">
                   <div><small>Events loaded</small><strong>{data.events_loaded}</strong></div>
-                  <div><small>AI usages</small><strong>{data.ai_usages_detected}</strong></div>
-                  <div><small>Risk results</small><strong>{data.results_count}</strong></div>
+                  <div><small>AI sign-in records</small><strong>{data.ai_usages_detected}</strong></div>
+                  <div><small>Findings</small><strong>{data.results_count}</strong></div>
                 </div>
 
                 <h4>Risk Findings</h4>
@@ -201,7 +201,7 @@ export default function App() {
 
       <footer>
         ShadowSaaS Radar · Independent research prototype ·
-        Authentication evidence only
+        Based on authentication events only. These records do not establish AI prompt activity, file uploads or downloads, data transfers, data exfiltration, policy violations, or account compromise.
       </footer>
     </main>
   )

@@ -1,7 +1,7 @@
-FROM node:20-slim AS frontend-builder
+FROM node:22-slim AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci --no-audit --no-fund
+RUN npm config set fetch-retries 5 && npm config set fetch-retry-mintimeout 20000 && npm ci --no-audit --no-fund --loglevel=error
 COPY frontend/ ./
 RUN npm run build
 

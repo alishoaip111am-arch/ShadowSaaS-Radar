@@ -2,35 +2,45 @@ ShadowSaaS Radar
 
 Explainable Shadow AI Detection | Identity Security | IAM Behavioral Analytics
 
-<p align="center">
-  **Turning Identity Telemetry into Explainable Security Intelligence**
-</p>---
+Turning Identity Telemetry into Explainable Security Intelligence
 
-Live Demo
+---
 
-Explore the application:
+Project Overview
 
-"Launch ShadowSaaS Radar" (https://shadow-saa-s-radar-1--alishuayb.replit.app)
+ShadowSaaS Radar is an independent full-stack cybersecurity research and engineering prototype that explores how identity and authentication telemetry can help organizations identify potential Shadow AI access patterns and investigate identity-related security risks.
+
+The project combines identity log ingestion, application identification, behavioral analytics, explainable risk assessment, and an interactive web application.
+
+It is designed around one central engineering principle:
+
+«Detect what the available evidence supports. Explain why a finding was generated. Make the limitations explicit.»
+
+Live Application:
+https://shadow-saa-s-radar-1--alishuayb.replit.app
 
 Source Code:
+https://github.com/alishoaip111am-arch/ShadowSaaS-Radar
 
-"GitHub Repository" (https://github.com/alishoaip111am-arch/ShadowSaaS-Radar)
+Public Docker Image:
+"ghcr.io/alishoaip111am-arch/shadowsaas-radar:latest"
 
-ShadowSaaS Radar is an independent full-stack cybersecurity research prototype that explores how identity and authentication telemetry can help organizations identify potential Shadow AI access patterns and investigate identity-related security risks.
+Docker Package:
+https://github.com/users/alishoaip111am-arch/packages/container/package/shadowsaas-radar
 
-«Demo safety: Use synthetic or non-sensitive sample data only. Do not upload confidential organizational logs or personally identifiable information to the public demo.»
+«Demo Safety: Use synthetic or non-sensitive sample data only. Do not upload confidential organizational logs or personally identifiable information to the public demo.»
 
 ---
 
 1. Executive Summary
 
-What happens when employees access AI applications using corporate identities without sufficient organizational visibility?
+The rapid adoption of generative AI introduces a growing identity security and governance challenge.
 
-The rapid adoption of generative AI introduces a growing identity security and governance challenge. Organizations need better visibility into which AI services are accessed through corporate authentication systems, particularly when those services are outside approved application inventories.
+Employees may access AI applications using corporate identities without sufficient organizational visibility. Security teams therefore need better ways to identify potentially unauthorized application access and understand its significance.
 
-ShadowSaaS Radar investigates this challenge through identity and authentication telemetry.
+ShadowSaaS Radar investigates how existing identity telemetry can contribute to this challenge.
 
-The platform combines:
+The platform provides:
 
 - Authentication event ingestion and normalization.
 - Application catalog matching for known generative AI services.
@@ -38,13 +48,12 @@ The platform combines:
 - Explainable risk scoring and severity classification.
 - IAM behavioral analytics.
 - Evidence-based security reporting.
-- A full-stack web interface for interactive analysis.
+- REST API development using FastAPI.
+- An interactive React and TypeScript frontend.
+- Docker-based application packaging.
+- Automated CI/CD workflows using GitHub Actions.
 
 Rather than treating every authentication event as a security incident, the system analyzes observable access patterns and generates contextual findings to support investigation and risk prioritization.
-
-The central engineering principle is:
-
-Detect what the available evidence supports. Explain why a finding was generated. Make the limitations explicit.
 
 ---
 
@@ -60,7 +69,7 @@ Organizations may face situations where:
 - Repeated authentication patterns are difficult to investigate manually.
 - Existing identity logs contain useful security signals but provide limited visibility into activity inside applications.
 
-Traditional authentication monitoring can identify access events. However, understanding their security significance requires application identification, event correlation, behavioral analysis, and contextual risk assessment.
+Traditional authentication monitoring can identify access events. Understanding their security significance requires application identification, event correlation, behavioral analysis, and contextual risk assessment.
 
 ShadowSaaS Radar explores how existing identity telemetry can be transformed into explainable indicators of potential Shadow AI access.
 
@@ -70,7 +79,7 @@ ShadowSaaS Radar explores how existing identity telemetry can be transformed int
 
 The project has been evaluated through two separate experimental tracks.
 
-Synthetic Shadow AI Benchmark
+3.1 Synthetic Shadow AI Benchmark
 
 Metric| Result
 Simulated employees| 200
@@ -84,7 +93,9 @@ Precision| 100%
 Recall| 100%
 F1-score| 100%
 
-Real Anonymized IAM Behavioral Analysis
+Research integrity: These metrics apply exclusively to predefined synthetic scenarios. Expected labels were defined by the project author using the same pattern definitions as the detector. They demonstrate consistency against the synthetic benchmark, not independently established real-world detection accuracy.
+
+3.2 Real Anonymized IAM Behavioral Analysis
 
 Metric| Result
 Real anonymized IAM events| 2,184,272
@@ -95,13 +106,17 @@ HIGH severity alerts| 8
 MEDIUM severity alerts| 40
 Reported processing time| Approximately 5.85 seconds
 
-Research integrity and interpretation
-
-The 100% precision, recall, and F1-score results apply exclusively to predefined synthetic scenarios. The expected labels were defined by the project author using the same pattern definitions as the detector.
-
-These results demonstrate consistency against the synthetic benchmark. They do not establish real-world Shadow AI detection accuracy.
-
 The real IAM dataset evaluates a separate behavioral analysis pipeline. It does not identify specific AI application usage.
+
+3.3 Engineering Achievements
+
+- Full-stack application using React, TypeScript, and FastAPI.
+- Modular Python ingestion and detection architecture.
+- HENNGE-style authentication CSV adapter.
+- Processing of more than 2.18 million real anonymized IAM events.
+- Automated Docker image build and runtime smoke testing.
+- Public Docker image published through GitHub Container Registry.
+- GitHub Actions workflow for image publication and container verification.
 
 ---
 
@@ -121,15 +136,16 @@ Capabilities include:
 - Providing supporting evidence for each finding.
 - Separating application identification from assumptions about actual application activity.
 
-The application catalog currently includes examples such as:
+The application catalog currently includes:
 
-- ChatGPT
-- Claude
-- Google Gemini
-- Microsoft Copilot
-- Perplexity
-- DeepSeek
-- Dropbox
+Application| Category
+ChatGPT| Generative AI
+Claude| Generative AI
+Google Gemini| Generative AI
+Microsoft Copilot| Generative AI
+Perplexity| Generative AI
+DeepSeek| Generative AI
+Dropbox| File Sharing
 
 Catalog entries are maintained independently of the detection engine.
 
@@ -179,18 +195,15 @@ The objective is to make security findings understandable and reviewable rather 
 
 4.5 Full-Stack Web Application
 
-ShadowSaaS Radar includes an interactive web interface connected to its Python-based analysis backend.
+The application combines:
 
-The application brings together:
-
-- A React and TypeScript frontend.
-- A Vite-based frontend build system.
-- A Python backend using FastAPI.
+- React and TypeScript frontend.
+- Vite frontend build system.
+- Python backend using FastAPI.
+- REST API endpoints for security analysis.
 - Authentication log upload and analysis workflows.
 - Interactive findings and risk presentation.
 - Backend-powered security analysis.
-
-The web interface provides an accessible way to explore the research prototype without relying exclusively on command-line execution.
 
 ---
 
@@ -202,10 +215,10 @@ Component| Responsibility
 Frontend| Interactive analysis interface
 API Layer| Backend application and analysis requests
 Ingestion Layer| Parses, validates, and normalizes authentication events
-Event Model| Provides a common representation for different log sources
-Application Catalog| Matches known applications, domains, and SSO service names
+Event Model| Common representation for different log sources
+Application Catalog| Matches known applications and SSO service names
 Detection Engine| Identifies authentication behavior patterns
-Risk Engine| Calculates explainable risk scores and severity levels
+Risk Engine| Calculates explainable risk scores and severity
 Reporting Layer| Produces structured findings and supporting evidence
 IAM Behavioral Engine| Analyzes identity-related behavioral events
 Data Processing Pipeline| Processes large IAM datasets efficiently
@@ -229,7 +242,7 @@ The implementation emphasizes:
 
 Backend and Data Processing
 
-- Python
+- Python 3.11
 - FastAPI
 - CSV processing
 - Modular Python architecture
@@ -242,6 +255,7 @@ Frontend
 - TypeScript
 - Vite
 - CSS
+- npm
 
 Cybersecurity and Analytics
 
@@ -253,23 +267,96 @@ Cybersecurity and Analytics
 - Behavioral pattern detection
 - Explainable risk scoring
 
-Engineering and Research
+DevOps and Engineering
 
 - Git and GitHub
-- Automated testing
-- Synthetic benchmark generation
-- Large-scale anonymized dataset processing
+- Docker
+- GitHub Actions
+- GitHub Container Registry (GHCR)
+- Multi-stage Docker builds
+- Container runtime health verification
+- Automated frontend build
 - Reproducible evaluation
 
 ---
 
-7. Data Sources and Experimental Methodology
+7. Docker Deployment and Container Registry
+
+ShadowSaaS Radar is packaged as a Docker image and published publicly through GitHub Container Registry.
+
+Published Image
+
+Registry: GitHub Container Registry (GHCR)
+
+Image:
+
+"ghcr.io/alishoaip111am-arch/shadowsaas-radar:latest"
+
+Package:
+
+https://github.com/users/alishoaip111am-arch/packages/container/package/shadowsaas-radar
+
+The package is publicly accessible.
+
+Pull the Docker Image
+
+docker pull ghcr.io/alishoaip111am-arch/shadowsaas-radar:latest
+
+Run the Container
+
+docker run -d \
+  --name shadowsaas-radar \
+  -p 8000:8000 \
+  ghcr.io/alishoaip111am-arch/shadowsaas-radar:latest
+
+Verify Application Health
+
+curl http://localhost:8000/api/health
+
+Open the application:
+
+"http://localhost:8000"
+
+Docker Engineering
+
+The Docker implementation uses a multi-stage build:
+
+1. Frontend build stage: Uses Node.js to install dependencies and generate the production frontend.
+2. Backend runtime stage: Uses Python 3.11 slim to install backend dependencies and run FastAPI.
+3. Production assets: Copies the compiled frontend into the backend image.
+4. Runtime configuration: Exposes port 8000 and supports the PORT environment variable.
+5. Container security: Runs the application using a non-root application user.
+
+Automated Docker Workflow
+
+GitHub Actions automates the Docker delivery process.
+
+The workflow:
+
+- Checks out the repository.
+- Configures Docker Buildx.
+- Authenticates to GHCR using the repository-provided GitHub token.
+- Builds and publishes the Docker image.
+- Publishes the "latest" and commit-specific tags.
+- Pulls the published image.
+- Runs the container.
+- Checks the backend health endpoint.
+- Verifies the frontend HTTP response.
+- Cleans up the test container.
+
+This provides an automated build and runtime smoke-test process before considering a container release successful.
+
+Important: GHCR publication and container verification do not, by themselves, constitute deployment to a production hosting environment.
+
+---
+
+8. Data Sources and Experimental Methodology
 
 ShadowSaaS Radar uses two distinct data sources for different evaluation purposes.
 
 Their results are intentionally reported separately to avoid confusing synthetic Shadow AI detection performance with real-world IAM behavioral analysis.
 
-7.1 HENNGE Access Control Adapter
+8.1 HENNGE Access Control Adapter
 
 The HENNGE adapter follows publicly available HENNGE Access Control access-log documentation.
 
@@ -317,9 +404,9 @@ Precision| 100%
 Recall| 100%
 F1-score| 100%
 
-These results apply only to the generated dataset and its predefined scenarios. They demonstrate consistency against the synthetic benchmark, not independently established real-world detection accuracy.
+These results apply only to the generated dataset and its predefined scenarios.
 
-7.2 Real Anonymized IAM-UEBA Dataset
+8.2 Real Anonymized IAM-UEBA Dataset
 
 The project also includes an experimental IAM behavioral analysis pipeline evaluated using a real anonymized IAM dataset published on Zenodo.
 
@@ -369,7 +456,7 @@ This experiment demonstrates ingestion, IAM behavioral analysis, and processing 
 
 ---
 
-8. Authentication Pattern Classification
+9. Authentication Pattern Classification
 
 The Shadow AI detection engine classifies authentication behavior into three patterns.
 
@@ -384,7 +471,7 @@ These patterns represent authentication behavior, not confirmed application usag
 
 ---
 
-9. Explainable Risk Model
+10. Explainable Risk Model
 
 The current risk model uses initial engineering weights.
 
@@ -421,41 +508,39 @@ Risk weights and thresholds require further calibration using independently labe
 
 ---
 
-10. Input Formats
+11. Input Formats
 
 HENNGE Access Control CSV
 
 Required columns:
 
-"Timestamp"
+Timestamp,Username,Login successful,SSO Target
 
-"Username"
-
-"Login successful"
-
-"SSO Target"
-
-Additional documented fields are preserved as metadata.
+Additional documented fields are preserved as metadata where available.
 
 Important: The HENNGE format does not provide account-type information. Free-account status cannot be inferred from these logs.
 
 Generic Authentication CSV
 
-The generic ingestion format supports the following required columns:
+The generic ingestion format converts supported CSV records into the common event model.
 
-"timestamp,user,app_domain,account_type"
+The event model supports:
 
-Expected timestamp format:
-
-"%Y-%m-%d %H:%M:%S"
-
-The generic ingestion pipeline converts supported CSV records into the common event model.
+- Timestamp
+- User
+- Source
+- Event type
+- Target
+- Authentication outcome
+- Optional device ID
+- Optional IP address
+- Additional metadata
 
 Refer to the project implementation and sample data for the exact supported input conventions.
 
 ---
 
-11. Reproducibility and Local Execution
+12. Reproducibility and Local Execution
 
 Clone the Repository
 
@@ -488,7 +573,7 @@ The IAM-UEBA dataset is not included in this repository.
 
 Download the original dataset from Zenodo and place the extracted "events.csv" file at:
 
-data/real/events.csv
+"data/real/events.csv"
 
 This path is excluded from version control through ".gitignore".
 
@@ -496,9 +581,7 @@ Then run:
 
 python iam_main.py data/real/events.csv
 
-The full-stack application also has a frontend build workflow in the "frontend" directory. Its dependencies and scripts are defined in "frontend/package.json".
-
-To build the frontend:
+Build the Frontend
 
 cd frontend
 npm install
@@ -506,7 +589,7 @@ npm run build
 
 ---
 
-12. Security Limitations and Responsible Use
+13. Security Limitations and Responsible Use
 
 ShadowSaaS Radar is an educational research and engineering prototype.
 
@@ -561,7 +644,7 @@ The current prototype should not be treated as a production-ready enterprise sec
 
 ---
 
-13. Roadmap
+14. Roadmap
 
 Potential future development areas include:
 
@@ -582,7 +665,7 @@ A particularly important research direction is combining identity authentication
 
 ---
 
-14. License and Attribution
+15. License and Attribution
 
 This project is released under the MIT License.
 
@@ -600,13 +683,13 @@ ShadowSaaS Radar is an independent project and is not affiliated with, sponsored
 
 ---
 
-15. Project Purpose
+16. Project Purpose
 
 ShadowSaaS Radar explores how identity telemetry can contribute to AI application visibility and IAM security analysis.
 
 Its central engineering principle is simple:
 
-Detect what the available evidence supports. Explain why a finding was generated. Make the limitations explicit.
+«Detect what the available evidence supports. Explain why a finding was generated. Make the limitations explicit.»
 
 The project brings together:
 
@@ -618,6 +701,8 @@ The project brings together:
 - REST API development.
 - Frontend engineering.
 - Automated testing.
+- Docker packaging and distribution.
+- CI/CD workflow engineering.
 - Reproducible experimental evaluation.
 
 It is an integrated engineering effort combining Python and TypeScript to investigate a growing identity security challenge.
@@ -628,6 +713,7 @@ Project Links
 
 - Live Application: https://shadow-saa-s-radar-1--alishuayb.replit.app
 - GitHub Repository: https://github.com/alishoaip111am-arch/ShadowSaaS-Radar
+- Docker Image (GHCR): https://github.com/users/alishoaip111am-arch/packages/container/package/shadowsaas-radar
 - IAM-UEBA Dataset: https://zenodo.org/records/22871318
 - HENNGE Access Control Documentation: https://support.hdeone.com/hc/en-us/articles/11374378879641
 
@@ -637,6 +723,6 @@ ShadowSaaS Radar
 
 Turning Identity Telemetry into Explainable Security Intelligence.
 
-Status: Independent research and engineering prototype with a full-stack web interface.
+Status: Independent research and engineering prototype with a full-stack web interface and publicly published Docker image.
 
 License: MIT (project code). Third-party dataset licensing remains separate.

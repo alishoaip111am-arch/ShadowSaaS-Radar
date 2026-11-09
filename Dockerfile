@@ -5,7 +5,8 @@ WORKDIR /app/frontend
 
 COPY frontend/package.json frontend/package-lock.json ./
 
-RUN npm ci --no-audit --no-fund
+RUN npm install -g npm@12.2.2
+RUN npm ci --no-audit --no-fund || (cat /root/.npm/_logs/*debug-0.log; exit 1)
 
 COPY frontend/ ./
 

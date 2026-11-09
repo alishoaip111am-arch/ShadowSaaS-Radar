@@ -1,4 +1,5 @@
-name: Docker Build
+
+name: Docker Build and Runtime Test
 
 on:
   push:
@@ -8,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +24,39 @@ jobs:
         with:
           context: .
           push: false
-          tags: shadowsaas-radar:latest
+          load: true
+          tags: shadowsaas-radar:test
+
+      - name: Run Docker container
+        run: |
+          docker run -d \
+            --name shadowsaas-test \
+            -p 8000:8000 \
+            shadowsaas-radar:test
+
+      - name: Wait for application health
+        run: |
+          for i in $(seq 1 30); do
+            if curl --fail http://localhost:8000/api/health; then
+              echo "Health check passed"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Health check failed"
+          docker logs shadowsaas-test
+          exit 1
+
+      - name: Test API response
+        run: |
+          curl --fail http://localhost:8000/api/health
+
+      - name: Verify frontend response
+        run: |
+          curl --fail http://localhost:8000/
+
+      - name: Cleanup
+        if: always()
+        run: |
+          docker logs shadowsaas-test || true
+          docker rm -f shadowsaas-test || true

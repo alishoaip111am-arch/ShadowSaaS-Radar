@@ -3,10 +3,12 @@ FROM node:22-alpine AS frontend-builder
 
 WORKDIR /app/frontend
 
-COPY frontend/package*.json ./
-RUN npm install --no-audit --no-fund
+COPY frontend/package.json frontend/package-lock.json ./
+
+RUN npm ci --no-audit --no-fund
 
 COPY frontend/ ./
+
 RUN npm run build
 
 # Stage 2: Run FastAPI backend
@@ -19,6 +21,7 @@ ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
 
 COPY requirements.txt ./
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY api.py ./
